@@ -1,5 +1,7 @@
-package apps.ucu.edu.ua.flower.store;
+package apps.ucu.edu.ua.springmagic;
 
+import apps.ucu.edu.ua.flower.store.Flower;
+import apps.ucu.edu.ua.springmagic.FlowerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
