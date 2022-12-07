@@ -34,7 +34,6 @@ public class Flower extends Item{
     }
     public String getType() { return flowerType.toString(); }
 
-    @Override
     public double price() {
         return price;
     }

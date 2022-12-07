@@ -15,9 +15,4 @@ public class FlowerBucket extends Item {
     public double getPrice() {
         return price;
     }
-
-    @Override
-    public double price() {
-        return price;
-    }
 }
