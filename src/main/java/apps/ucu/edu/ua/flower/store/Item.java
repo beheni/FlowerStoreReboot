@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Item {
+public abstract class Item {
     protected String description;
     protected double price;
     public String getDescription() {
