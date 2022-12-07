@@ -1,25 +1,32 @@
 package apps.ucu.edu.ua.user;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Transient;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
-@Getter
-@Setter
+
+
+@Getter @Setter @Entity
+@Table
+@AllArgsConstructor
+@NoArgsConstructor
 public class AppUser {
     @Id
     @GeneratedValue
     private int id;
+    private String name;
     private String email;
-    private LocalDate dob;
     @Transient
     private int age;
+    private LocalDate dob;
 
-    public int getAge() {
+    public int getAge(){
         return Period.between(dob, LocalDate.now()).getYears();
     }
+
 }
