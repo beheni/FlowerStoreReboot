@@ -1,0 +1,38 @@
+package apps.ucu.edu.ua.order;
+
+import apps.ucu.edu.ua.delivery.Delivery;
+import apps.ucu.edu.ua.flower.store.Item;
+import apps.ucu.edu.ua.payment.Payment;
+import lombok.Getter;
+import lombok.ToString;
+
+import java.util.LinkedList;
+@ToString @Getter
+public class Order {
+    private LinkedList<Item> items;
+    private Payment payment;
+    private Delivery delivery;
+    public void setPaymentStrategy(Payment paymentType) {
+        this.payment = paymentType;}
+
+    public void setDeliveryStrategy(Delivery deliveryType) {
+        this.delivery = deliveryType;}
+
+    public double calculateTotalPrice(){
+        double price = 0;
+        for (Item item : items) {
+            price += item.price();}
+        return price;}
+
+    public void addItem(Item item) {
+        items.add(item);
+    }
+
+    public void removeItem(Item item) {
+        items.remove(item);
+    }
+    public void processOrder() {
+        System.out.println("Processing order...\n" + "Type of delivery: " + delivery.getClass() +
+                "\n" + "Type of payment: " + payment.getClass());
+    }
+}
