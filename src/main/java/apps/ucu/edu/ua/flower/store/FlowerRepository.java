@@ -1,4 +1,4 @@
-package apps.ucu.edu.ua.springmagic;
+package apps.ucu.edu.ua.flower.store;
 
 import apps.ucu.edu.ua.flower.store.Flower;
 import org.springframework.stereotype.Repository;
